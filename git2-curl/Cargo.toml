@@ -13,7 +13,7 @@ Intended to be used with the git2 crate.
 edition = "2018"
 
 [dependencies]
-curl = "0.4"
+curl = { git = "https://github.com/toshiyuki-rs/curl-rust.git", version = "0.4" }
 url = "2.0"
 log = "0.4"
 git2 = { path = "..", version = "0.13", default-features = false }
