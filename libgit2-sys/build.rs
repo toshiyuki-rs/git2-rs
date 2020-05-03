@@ -173,6 +173,12 @@ fn main() {
     }
 
     if target.contains("apple") {
+        println!("cargo:rustc-link-search=/usr/lib");
+        // this is cc default libray path.
+        // You may have some link errors, when you link iconv.
+        // The cause is that cc might try to link  macports libiconv.
+        // The macport libiconv has different symbol names from original one.
+
         println!("cargo:rustc-link-lib=iconv");
         println!("cargo:rustc-link-lib=framework=Security");
         println!("cargo:rustc-link-lib=framework=CoreFoundation");
